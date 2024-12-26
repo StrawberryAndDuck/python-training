@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "python-training"
+version = "0.1.0"
+description = ""
+authors = ["suxi519 <gksthgml75@naver.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ipykernel = "^6.29.5"
+fastapi = "^0.115.6"
+pydantic = "^2.10.4"
+uvicorn = "^0.34.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
