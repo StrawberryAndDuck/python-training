@@ -10,4 +10,10 @@ INSERT INTO table_name (id, create_time, name) VALUES (1, "2024-09-09", "sung")
 
 INSERT INTO table_name (id, create_time, name) VALUES (2, "2024-09-10", "suxi")
 
+INSERT INTO table_name (id, create_time, name) VALUES (3, "2024-09-11", "suxi2")
+
+INSERT INTO table_name (id, create_time, name) VALUES (4, "2024-09-12", "suxi3")
+
+INSERT INTO table_name (id, create_time, name) VALUES (5, "2024-09-13", "suxi4")
+
 SELECT * FROM table_name
