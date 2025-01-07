@@ -1,0 +1,1 @@
+docker stop my-mysql && docker rm my-mysql
