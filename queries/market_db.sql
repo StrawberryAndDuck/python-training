@@ -43,7 +43,6 @@ ADD COLUMN debut_date DATE; -- 데뷔 일자
 - 회원 데이터 삽입
 INSERT INTO member (mem_id, mem_name, mem_number, addr, phone1, phone2, height, debut_date)
 VALUES
-
     ('TWC', '트와이스', 9, '서울', '02', '11111111', 167, '2015-10-19'),
     ('BLK', '블랙핑크', 4, '경남', '055', '22222222', 163, '2016-08-08'),
     ('WMN', '여자친구', 6, '경기', '031', '33333333', 166, '2015-01-15'),
@@ -114,3 +113,52 @@ SELECT mem_id, mem_name, debut_date, height
     FROM member
     WHERE height >= 164
     ORDER BY height DESC, debut_date ASC;
+
+SELECT *
+    FROM member
+    ORDER BY debut_date
+    LIMIT 3, 2;
+
+SELECT DISTINCT addr 
+    FROM member
+    ORDER BY addr;
+
+SELECT mem_id, amount
+    FROM buy
+    ORDER BY mem_id;
+
+SELECT mem_id "회원 아이디", SUM(amount)"총 구매 개수"
+    FROM buy
+    GROUP BY mem_id;
+
+SELECT mem_id "회원 아이디", SUM(amount*price)"총 구매 금액"
+    FROM buy
+    GROUP BY mem_id;
+
+SELECT AVG(amount) "평균 구매 개수" 
+    FROM buy
+    GROUP BY mem_id;
+
+SELECT COUNT(phone1)"연락처가 있는 회원"
+    FROM member;
+
+SELECT
+    COUNT(CASE WHEN phone1 IS NOT NULL THEN 1 END) AS "연락처가 있는 회원",
+    COUNT(CASE WHEN Phone1 IS NULL THEN 1 END) AS "연락처가 없는 회원"
+    FROM member;
+
+SELECT
+    SUM(phone1 IS NOT NULL) AS "연락처가 있는 회원",
+    SUM(phone1 IS NULL) AS "연락처가 없는 회원"
+    FROM member;
+
+SELECT mem_id "회원 아이디", SUM(price*amount) "총 구매 금액"
+    FROM buy
+    GROUP BY mem_id
+    HAVING SUM(price*amount) > 1000
+    ORDER BY SUM(price*amount) DESC;
+
+SELECT * FROM member;
+SELECT * FROM member LIMIT 5 OFFSET 3;
+
+SELECT DISTINCT phone1 FROM member;
