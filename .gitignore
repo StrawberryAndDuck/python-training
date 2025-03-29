@@ -1,1 +1,2 @@
-notebooks/fraud.csv
+*.csv
+*.xlsx
